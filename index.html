@@ -2,15 +2,18 @@
 <html>
   <head>
     <link rel="stylesheet" href="./client/styles.css">
+    <script type="text/javascript" src="./client/tournamentService.js"></script>
+    <script type="text/javascript" src="./client/tournamentController.js"></script>
     <script type="text/javascript" src="./client/client.js"></script>
+
     <title>Knockout Tournament</title>
   </head>
   <body>
     <!-- Edit me. -->
     <!-- For tests to pass, the IDs of the elements below MUST NOT change. -->
-    <input id="teamsPerMatch" placeholder="Teams per match" type="number" />
-    <input id="numberOfTeams" placeholder="Number of teams" type="number" />
-    <button id="start">Start</button>
+    <input id="teamsPerMatch" placeholder="Teams per match" type="number"/>
+    <input id="numberOfTeams" placeholder="Number of teams" type="number"/>
+    <button id="start" onclick="startTournament()">Start</button>
     <span id="winner"></span>
   </body>
 </html>
