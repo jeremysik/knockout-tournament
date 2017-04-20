@@ -1,11 +1,15 @@
 var tournamentService = new TournamentService();
 
 const startTournament = () => {
-	let numberOfTeams = document.getElementById('numberOfTeams').value,
-		teamsPerMatch = document.getElementById('teamsPerMatch').value;
+	let numberOfTeams = parseInt(document.getElementById('numberOfTeams').value),
+		teamsPerMatch = parseInt(document.getElementById('teamsPerMatch').value);
 
-	if(numberOfTeams < 1 || teamsPerMatch < 1 || !Number.isInteger(numberOfTeams) || !Number.isInteger(teamsPerMatch)) {
+	if(!Number.isInteger(numberOfTeams) || !Number.isInteger(teamsPerMatch) || numberOfTeams < 1 || teamsPerMatch < 1) {
 		alert('Please enter integers greater than 0');
 	}
-	console.log(numberOfTeams, teamsPerMatch);
+	
+	tournamentService.createTournament(numberOfTeams, teamsPerMatch)
+		.then((tournamentDetails) => {
+			//tournamentService.getMatch(tournamentDetails.tournamentId, 0, )
+		});
 }
